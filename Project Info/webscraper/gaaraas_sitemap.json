@@ -1,0 +1,40 @@
+{
+  "_id": "gaaraas_dakar_auto",
+  "startUrl": [
+    "https://www.gaaraas.com/fr/users/dakar-auto?page=[1-100]"
+  ],
+  "selectors": [
+    {
+      "id": "listing",
+      "type": "SelectorElement",
+      "parentSelectors": [
+        "_root"
+      ],
+      "selector": "a[href*='/vehicle_listings/']",
+      "multiple": true,
+      "delay": 0
+    },
+    {
+      "id": "listing_text",
+      "type": "SelectorText",
+      "parentSelectors": [
+        "listing"
+      ],
+      "selector": "_parent_",
+      "multiple": false,
+      "delay": 0,
+      "regex": ""
+    },
+    {
+      "id": "listing_url",
+      "type": "SelectorElementAttribute",
+      "parentSelectors": [
+        "listing"
+      ],
+      "selector": "_parent_",
+      "multiple": false,
+      "delay": 0,
+      "extractAttribute": "href"
+    }
+  ]
+}

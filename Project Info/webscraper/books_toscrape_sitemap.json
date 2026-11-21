@@ -1,0 +1,117 @@
+{
+  "_id": "books_toscrape",
+  "startUrl": [
+    "https://books.toscrape.com/catalogue/page-[1-50].html"
+  ],
+  "selectors": [
+    {
+      "id": "book_link",
+      "type": "SelectorLink",
+      "parentSelectors": [
+        "_root"
+      ],
+      "selector": "article.product_pod h3 a",
+      "multiple": true,
+      "delay": 0
+    },
+    {
+      "id": "products_on_page",
+      "type": "SelectorText",
+      "parentSelectors": [
+        "_root"
+      ],
+      "selector": "form.form-horizontal",
+      "multiple": false,
+      "delay": 0,
+      "regex": ""
+    },
+    {
+      "id": "title",
+      "type": "SelectorText",
+      "parentSelectors": [
+        "book_link"
+      ],
+      "selector": "div.product_main h1",
+      "multiple": false,
+      "delay": 0,
+      "regex": ""
+    },
+    {
+      "id": "price",
+      "type": "SelectorText",
+      "parentSelectors": [
+        "book_link"
+      ],
+      "selector": "div.product_main p.price_color",
+      "multiple": false,
+      "delay": 0,
+      "regex": ""
+    },
+    {
+      "id": "availability",
+      "type": "SelectorText",
+      "parentSelectors": [
+        "book_link"
+      ],
+      "selector": "div.product_main p.availability",
+      "multiple": false,
+      "delay": 0,
+      "regex": ""
+    },
+    {
+      "id": "rating",
+      "type": "SelectorElementAttribute",
+      "parentSelectors": [
+        "book_link"
+      ],
+      "selector": "p.star-rating",
+      "multiple": false,
+      "delay": 0,
+      "extractAttribute": "class"
+    },
+    {
+      "id": "reviews_count",
+      "type": "SelectorText",
+      "parentSelectors": [
+        "book_link"
+      ],
+      "selector": "table.table-striped tr:nth-of-type(7) td",
+      "multiple": false,
+      "delay": 0,
+      "regex": ""
+    },
+    {
+      "id": "description",
+      "type": "SelectorText",
+      "parentSelectors": [
+        "book_link"
+      ],
+      "selector": "#product_description ~ p",
+      "multiple": false,
+      "delay": 0,
+      "regex": ""
+    },
+    {
+      "id": "category",
+      "type": "SelectorText",
+      "parentSelectors": [
+        "book_link"
+      ],
+      "selector": "ul.breadcrumb li:nth-of-type(3) a",
+      "multiple": false,
+      "delay": 0,
+      "regex": ""
+    },
+    {
+      "id": "tax",
+      "type": "SelectorText",
+      "parentSelectors": [
+        "book_link"
+      ],
+      "selector": "table.table-striped tr:nth-of-type(5) td",
+      "multiple": false,
+      "delay": 0,
+      "regex": ""
+    }
+  ]
+}

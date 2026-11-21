@@ -1,0 +1,4 @@
+streamlit>=1.40
+selenium>=4.20
+pandas>=2.0
+plotly>=5.20
